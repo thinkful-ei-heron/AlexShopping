@@ -15,33 +15,18 @@ function logFood() {
   event.preventDefault();
   });
     
-  // $('.shopping-list').on('click', 'shopping-item-delete', function() {
-  //   $(event.currentTarget).closest('li').remove();
-  // });
   $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
     $(this).closest('li').remove();
   });
 
-  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
-    $(this).closest('span').toggleClass('.shopping-item_checked');
-  });
-  // $('ul').on('click', '.shopping-item-toggle', function(){
-  //   console.log('Turn it off');
-  //   $(this).parent('span').toggleClass('shopping-item_checked shopping-item');
+  // $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+  //   $(this).closest('span').toggleClass('.shopping-item_checked');
   // });
 
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+  });
 
 };
-  
-/*
 
-$('.shopping-list').on('click', 'shopping-item-delete', function(event){
-  $(this).closest('li').remove();  
-});
-// to check off the item on list
-$('.shopping-list').on('click', 'shopping-item-toggle', function(event){
-  $(this).closest('li').find('shopping-item').toggleClass(
-      '.shopping-item_checked')}
-
-*/
 $(logFood);
